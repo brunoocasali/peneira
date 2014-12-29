@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Share email:</strong>
+  <%= @preference.share_email %>
+</p>
+
+<p>
+  <strong>Share phone:</strong>
+  <%= @preference.share_phone %>
+</p>
+
+<%= link_to 'Edit', edit_preference_path(@preference) %> |
+<%= link_to 'Back', preferences_path %>

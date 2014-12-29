@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @athlete.user %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @athlete.birthday %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @athlete.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @athlete.weight %>
+</p>
+
+<p>
+  <strong>Foot:</strong>
+  <%= @athlete.foot %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @athlete.position %>
+</p>
+
+<p>
+  <strong>Allow to travel:</strong>
+  <%= @athlete.allow_to_travel %>
+</p>
+
+<%= link_to 'Edit', edit_athlete_path(@athlete) %> |
+<%= link_to 'Back', athletes_path %>

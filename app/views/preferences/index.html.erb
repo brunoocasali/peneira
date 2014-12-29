@@ -1,0 +1,41 @@
+<div class="page-header">
+  <h2>preferences</h2>
+  <div class="text-right">
+    <%= link_to raw('<i class="fa fa-plus fa-2x"></i>'), new_preference_path,
+     class: 'btn btn-default' %>
+  </div>
+</div>
+<div class="table-responsive">
+  <table class="table table-hover table-condensed">
+    <thead>
+      <tr>
+          <th>share_email</th>
+          <th>share_phone</th>
+        <th colspan="3"> Options </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @preferences.each do |preference| %>
+      <tr>
+          <td><%= preference.share_email %></td>
+          <td><%= preference.share_phone %></td>
+        <td>
+          <%= link_to raw('<i class="fa fa-eye fa-2x"></i>'), preference, class: 'btn btn-sm btn-primary center-block white' %>
+        </td>
+        <td>
+          <%= link_to raw('<i class="fa fa-pencil fa-2x"></i>'), edit_preference_path(preference), class: 'btn btn-sm btn-primary center-block white' %>
+        </td>
+        <td>
+          <%= link_to raw('<i class="fa fa-trash fa-2x"></i>'),
+              preference, method: :delete, data: { confirm: 'Você tem certeza?' },
+              class: 'btn btn-danger center-block white btn-sm' %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="text-center">
+    <%= paginate @preferences %>
+  </div>  
+</div>

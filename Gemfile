@@ -7,6 +7,9 @@ gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+# Use thin as web server
+gem 'thin'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
@@ -34,6 +37,10 @@ gem 'omniauth-oauth2'
 
 # To get data from Facebook by a connected user by a oAuth2 connection.
 gem 'omniauth-facebook'
+gem 'koala'
+
+# To get data from oAuth2 by a connected user by a oAuth2 connection.
+gem 'omniauth-google-oauth2'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -61,6 +68,10 @@ gem 'simple_form'
 
 # Country SelecT!
 gem 'country_select'
+
+# Use to upload images
+gem 'carrierwave'
+gem 'rmagick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

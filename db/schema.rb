@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141229133917) do
+ActiveRecord::Schema.define(version: 20141230043119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,17 @@ ActiveRecord::Schema.define(version: 20141229133917) do
   add_index "athletes", ["foot_id"], name: "index_athletes_on_foot_id", using: :btree
   add_index "athletes", ["position_id"], name: "index_athletes_on_position_id", using: :btree
   add_index "athletes", ["user_id"], name: "index_athletes_on_user_id", using: :btree
+
+  create_table "authorizations", force: :cascade do |t|
+    t.string   "provider",   limit: 20
+    t.string   "uid"
+    t.integer  "user_id"
+    t.string   "token"
+    t.string   "secret"
+    t.string   "username",   limit: 40
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "clubs", force: :cascade do |t|
     t.string   "name"
@@ -107,8 +118,12 @@ ActiveRecord::Schema.define(version: 20141229133917) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "preference_id"
+    t.string   "user_type",              limit: 7
+    t.string   "unconfirmed_email"
+    t.string   "image"
   end
 
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["preference_id"], name: "index_users_on_preference_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

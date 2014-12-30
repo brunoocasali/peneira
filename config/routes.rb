@@ -1,21 +1,17 @@
 Rails.application.routes.draw do
-
-  resources :athletes
-
-  resources :scouts
-
-  resources :clubs
-
-  devise_for :users
+  default_url_options :host => 'localhost:3000'
   
   concern :paginatable do
     get '(page/:page)', :action => :index, :on => :collection, :as => ''
   end
-
-  resources :preferences
+  
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks',
+                                         registrations: 'registrations' }
+  resources :athletes, :concerns => :paginatable
+  resources :scouts, :concerns => :paginatable
+  resources :clubs, :concerns => :paginatable
+  resources :preferences, :concerns => :paginatable
   
   get 'welcome/index'
-
-  #resources :entity, :concerns => :paginatable  
   root 'welcome#index'
 end

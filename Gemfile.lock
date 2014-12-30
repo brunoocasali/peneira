@@ -50,6 +50,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     arel (6.0.0)
     bcrypt (3.1.9)
     binding_of_caller (0.7.2)
@@ -69,6 +70,11 @@ GEM
     capistrano-rails (1.1.2)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -83,11 +89,13 @@ GEM
     country_select (2.1.0)
       countries (~> 0.9, >= 0.9.3)
     currencies (0.4.2)
+    daemons (1.1.9)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     enumerate_it (1.2.3)
       activesupport (>= 3.0.0)
     erubis (2.7.0)
+    eventmachine (1.0.4)
     execjs (2.2.2)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
@@ -108,6 +116,10 @@ GEM
     kaminari (0.16.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    koala (1.10.1)
+      addressable
+      faraday
+      multi_json
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -134,6 +146,9 @@ GEM
       rack (~> 1.0)
     omniauth-facebook (2.0.0)
       omniauth-oauth2 (~> 1.2)
+    omniauth-google-oauth2 (0.2.6)
+      omniauth (> 1.0)
+      omniauth-oauth2 (~> 1.1)
     omniauth-oauth2 (1.2.0)
       faraday (>= 0.8, < 0.10)
       multi_json (~> 1.3)
@@ -178,6 +193,7 @@ GEM
       json (~> 1.4)
     responders (2.0.2)
       railties (>= 4.2.0.alpha, < 5)
+    rmagick (2.13.4)
     sass (3.4.9)
     sass-rails (5.0.0)
       railties (>= 4.0.0, < 5.0)
@@ -206,6 +222,10 @@ GEM
       colorize
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    thin (1.6.3)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0)
+      rack (~> 1.0)
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -230,6 +250,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capistrano-rails
+  carrierwave
   coffee-rails (~> 4.1.0)
   country_select
   devise!
@@ -237,18 +258,22 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
+  koala
   omniauth
   omniauth-facebook
+  omniauth-google-oauth2
   omniauth-oauth2
   pg
   rails (= 4.2.0)
   rails-assets-bootstrap
   rails-assets-font-awesome
   rails-assets-normalize-scss (~> 3.0.1)
+  rmagick
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_form
   spring
+  thin
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)

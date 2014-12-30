@@ -1,0 +1,9 @@
+<h3> Who are you ?! </h3>
+ 
+<%= f.input :user_type, 
+            :collection => [[:athlete, 'Atleta'], [:scout, 'Scout']], 
+            :label_method => :last, 
+            :value_method => :first,
+            :as => :radio_buttons, 
+            :input_html => { :onclick => "this.form.submit();" },
+            :item_wrapper_class => 'inline' %>

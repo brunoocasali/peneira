@@ -1,0 +1,13 @@
+development:
+  facebook_key: "1541091172805124"
+  facebook_secret: "7c436cbf173324b95ce01d5287002a11"
+
+  google_key: "229935539709-f0tcotjufjrp659k1hsn1hci00iralsp.apps.googleusercontent.com"
+  google_secret: "u_DWriXOXkIE1hDPzDEpQqeP"
+
+production:
+  facebook_key: "1541078276139747"
+  facebook_secret: "9664bf8aefcd031c9044b0078da560bb"
+
+  google_key: "850732988837-0qmnj130ec1qdla15g1ggspb0hf3lmne.apps.googleusercontent.com"
+  google_secret: "XVOPH0afs_MyvxQO2EX2riy1"

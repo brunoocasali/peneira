@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :lockable, :timeoutable
+  
   devise :database_authenticatable, :registerable, :omniauthable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
          
@@ -21,7 +20,7 @@ class User < ActiveRecord::Base
   end
 
   def steps
-    %w{who_am_i basic_informations}
+    %w{basic_informations who_am_i}
   end
 
   def next_step
@@ -70,6 +69,7 @@ class User < ActiveRecord::Base
         user.email = auth.info.email
         user.remote_image_url = auth.info.image.gsub('http://','https://')
         user.current_step = :who_am_i
+        user.save!
       end
 
       authorization.username = auth.info.name

@@ -2,7 +2,7 @@
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
-  
+
   <%= render "#{resource.current_step}_step", :f => f %>
   
   <p><%= f.button :submit, 'Back', :name => 'back_button' unless resource.first_step? %></p>

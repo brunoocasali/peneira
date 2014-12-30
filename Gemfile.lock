@@ -53,13 +53,7 @@ GEM
     addressable (2.3.6)
     arel (6.0.0)
     bcrypt (3.1.9)
-    binding_of_caller (0.7.2)
-      debug_inspector (>= 0.0.1)
     builder (3.2.2)
-    byebug (3.5.1)
-      columnize (~> 0.8)
-      debugger-linecache (~> 1.2)
-      slop (~> 3.6)
     capistrano (3.2.1)
       i18n
       rake (>= 10.0.0)
@@ -83,15 +77,12 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     colorize (0.7.3)
-    columnize (0.9.0)
     countries (0.9.3)
       currencies (~> 0.4.2)
     country_select (2.1.0)
       countries (~> 0.9, >= 0.9.3)
     currencies (0.4.2)
     daemons (1.1.9)
-    debug_inspector (0.0.2)
-    debugger-linecache (1.2.0)
     enumerate_it (1.2.3)
       activesupport (>= 3.0.0)
     erubis (2.7.0)
@@ -207,7 +198,6 @@ GEM
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
-    slop (3.6.0)
     spring (1.2.0)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -238,17 +228,11 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
-    web-console (2.0.0)
-      activemodel (~> 4.0)
-      binding_of_caller (>= 0.7.2)
-      railties (~> 4.0)
-      sprockets-rails (>= 2.0, < 4.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  byebug
   capistrano-rails
   carrierwave
   coffee-rails (~> 4.1.0)
@@ -276,4 +260,3 @@ DEPENDENCIES
   thin
   turbolinks
   uglifier (>= 1.3.0)
-  web-console (~> 2.0)
